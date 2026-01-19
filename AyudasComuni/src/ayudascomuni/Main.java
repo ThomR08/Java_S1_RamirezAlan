@@ -26,8 +26,6 @@ public class Main {
                 default -> System.out.println("\n❌ Opción inválida. Intente nuevamente.");
             }
         }
-
-        scanner.close();
     }
 
     private static void mostrarMenu() {

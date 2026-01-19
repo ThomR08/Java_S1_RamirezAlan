@@ -23,9 +23,11 @@ class GestorFundacion extends Funciones {
             return;
         }
 
-        System.out.println("\n╔════════════════════════════════════════════════════════════╗");
-        System.out.println("║           LISTADO DE PERSONAS REGISTRADAS                  ║");
-        System.out.println("╚════════════════════════════════════════════════════════════╝");
+        
+        System.out.println("""
+                           ========================================
+                           LISTADO DE PERSONAS REGISTRADAS
+                           ========================================""");
         
         for (int i = 0; i < personas.size(); i++) {
             System.out.println("\n" + (i + 1) + ". " + personas.get(i));
