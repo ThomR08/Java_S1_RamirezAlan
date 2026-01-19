@@ -1,13 +1,47 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package ayudascomuni;
 
-/**
- *
- * @author thom
- */
-public class GestorFundacion {
-    
+import java.util.ArrayList;
+import java.util.List;
+
+class GestorFundacion extends Funciones {
+    private List<Persona> personas;
+
+    public GestorFundacion() {
+        this.personas = new ArrayList<>();
+    }
+
+    @Override
+    public void registrarPersona(Persona persona) {
+        personas.add(persona);
+        System.out.println("\n✓ Persona registrada exitosamente!");
+    }
+
+    @Override
+    public void verPersonas() {
+        if (personas.isEmpty()) {
+            System.out.println("\nNo hay personas registradas.");
+            return;
+        }
+
+        System.out.println("\n╔════════════════════════════════════════════════════════════╗");
+        System.out.println("║           LISTADO DE PERSONAS REGISTRADAS                  ║");
+        System.out.println("╚════════════════════════════════════════════════════════════╝");
+        
+        for (int i = 0; i < personas.size(); i++) {
+            System.out.println("\n" + (i + 1) + ". " + personas.get(i));
+        }
+    }
+
+    public Persona buscarPersona(String documento) {
+        for (Persona p : personas) {
+            if (p.getDocumento().equals(documento)) {
+                return p;
+            }
+        }
+        return null;
+    }
+
+    public int totalPersonas() {
+        return personas.size();
+    }
 }
